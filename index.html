@@ -1,0 +1,702 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-variant-alternates: inherit; font-variant-ligatures: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-feature-settings: inherit; font-optical-sizing: inherit; font-variation-settings: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; border-right-style: none; border-right-color: currentcolor; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: medium; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; border-bottom-style: none; border-bottom-color: currentcolor; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: medium; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>Xianglong_Xu_HW_02</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''>
+    <h1 id='author-xianglong-xu'><span>Author: Xianglong Xu</span></h1><p>&nbsp;</p>
+    <h2 id='identified-problems'><span>Identified Problems:</span></h2>
+    <h3 id='password-management-systems-diminish-human-memory-of-passwords'><span>Password Management Systems Diminish Human Memory of Passwords</span></h3><p>&nbsp;</p>
+    <h2 id='introduction'><span>Introduction:</span></h2><p><span>As discussed in the article, </span><em><span>Google Effects on Memory: Cognitive Consequences of Having Information at Our Fingertips</span></em><span>, the sophisticated algorithmic search engines make people no longer make costly efforts to find the things they want since people are primed to remember where to find the information instead of the information itself.</span></p><p><span>Nowadays, people prefer to generate different strong passwords for various sites in order to protect their information on the internet. Password management systems were developed by many technology companies to help people store their complicated passwords. People just need to confirm their bio information and the system will automatically input the password into the websites or applications. The system can even generate a string of irregular numbers and letters as passwords and store them in the system, which is quite safe but almost impossible for people to remember.</span></p><p><span>So, we assume that the conclusion from the Geogle effect could also be applied to the password management system. People tend to remember where to get the passwords instead of the passwords themselves. This could cause some problems, especially in some emergency situations(e.g., your phone is dead and you need to log in to your account on another phone), when people have no choices but only have to input the passwords by themselves. In situations like that, the consequences will become worse than the situation in that people need to get some information but Google does not work.</span></p><p>&nbsp;</p>
+    <h2 id='background-and-literature-review'><span>Background and Literature Review:</span></h2><ul><li><p><span>Sparrow, B., Liu, J., and Wegner, D. M. (2011). Google effects on memory: Cognitive consequences of having information at our fingertips. Science, 333, 776-778.</span></p></li></ul><p><span>The rise of the Internet, coupled with advanced algorithmic search engines, has made accessing information as simple as a click. No longer do we need to go through extensive efforts to find what we need. We can &quot;Google&quot; that long-lost classmate, discover online articles, or identify the actor we can&#39;t quite remember. The findings of four studies suggest that when confronted with challenging questions, people tend to think about computers, and when they anticipate future access to information, their ability to remember the information itself diminishes, but their memory for where to find it is enhanced. The Internet has evolved into a primary form of external or collective memory, where information is stored outside of ourselves.</span></p><p><img src="https://cdn.jsdelivr.net/gh/Sean652039/pic_bed@main/uPic/image-20231208163406113.png" alt="image-20231208163406113" style="zoom:70%;" /></p><ul><li><p><span>Johnson, J. (2014). Our Attention is Limited; Our Memory is Imperfect. Designing with the mind in mind: simple guide to understanding user interface design guidelines. 2nd ed. Burlington, MA: Morgan Kaufmann. Chapter 7</span></p></li></ul><p><span>Perceptions enter through various sensory systems, triggering responses in specific sensory areas before spreading to other brain regions. The text emphasizes that both features and context play crucial roles in activating neural patterns. The initial strength of a perception is influenced by amplification or dampening from other brain activity. Memory formation involves changes in neurons, making patterns easier to reactivate. Activating a memory entails reactivating the original neural pattern, distinguishing between initial activations and subsequent reactivations. The more often a memory is reactivated, the stronger it becomes. Memories are not located in specific brain spots but involve networks of neurons, with overlapping activity patterns. While damaging specific brain areas may reduce memory accuracy, critical pathways within neural patterns can eliminate memories. The hippocampus and amygdala are highlighted for their roles in storing long-term memories and emotionally intense memories, respectively.</span></p><p>&nbsp;</p>
+    <h2 id='implication-objective--deduction'><span>Implication Objective &amp; deduction:</span></h2><ul><li><p><span>Objective</span></p></li></ul><p><span>So about the password management systems, our objective is not only storing the passwords for people, but also help people to rember their passwords by reactivating their memory when they are using the password management system.</span></p><ul><li><p><span>Deduction</span></p></li></ul><p><span>As discussed before, we can easily tell that Semantic Long-term Memory is the memory we store the passwords, and also activating a memory is like switching on a familiar pattern in our brain. It&#39;s as if our brain remembers how easily it can turn on that pattern. When you see something very similar to what you saw before, it triggers the same brain pattern, and if you notice it, you recognize it. When encountering something highly similar to a prior experience, it triggers the same neural pattern, leading to recognition. Even without a direct similarity, our brain can retrieve the pattern with assistance from other brain regions, resulting in memory recall.</span></p><p><span>The more you use a memory pattern, the stronger it gets. This means it becomes easier to remember and recognize the thing it&#39;s connected to. Other parts of your brain can also make these memory patterns stronger or weaker with signals.</span></p><p><span>In light of these observations, in order to make people remember their passwords instead of simply relying on the password manegement system. This feature of this implication would serve as a mnemonic aid, designed to stimulate and reinforce the user&#39;s memory of their passwords. Its functionality goes beyond merely inputting and storing passwords; instead, it actively engages the user in a cognitive process. Every time the password management system is utilized, this implication comes into play. It could employ various memory-enhancing techniques, such as associating the password with a memorable image, phrase, personal detail or requiring users to input partial passwords, as proposed.</span></p><p><span>By integrating such a memory-improvement component into password management systems, we not only enhance the security of user accounts but also empower individuals to remember their passwords with greater ease and confidence. This approach fosters a more holistic and proactive approach to password security, ultimately benefiting both users and the platforms they rely on.</span></p><p>&nbsp;</p>
+    <h2 id='implication'><span>Implication</span></h2><p><span>Building upon the aforementioned discussion, the proposed implication aims to enhance users&#39; password memory through repetition and active involvement. This strategy operates as follows:</span></p><p><span>Let&#39;s consider a sample password, such as </span><code>Pitt@HIP123</code><span>,  which has been securely stored within our password management system. To fortify the user&#39;s memory of this password, the system strategically divides it into distinct parts, taking into account its length. In the case of </span><code>Pitt@HIP123</code><span>,  it is divided into three segments: </span><code>Pitt</code><span>,  </span><code>@HIP</code><span>,  and </span><code>123</code><span>.</span></p><p><span>Each time the user seeks to input the password, the system introduces an element of randomness. It selects one of these segments and prompts the user to manually input it. For instance, it might display </span><code>****@HIP123</code><span>,  with </span><code>****</code><span> signifying the segment that requires the user&#39;s active input. (p.s. This example is just showing how the implication works, meaning the system will NOT display user&#39;s passwords on the screen)</span></p><p><span>This approach not only harnesses the convenience of the password management system but also actively engages the user in the password recall process. By repeating this process during login, the user becomes more actively involved in recalling their password, thereby reinforcing their memory of it.</span></p><p>&nbsp;</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /* Add some styling to the content wrapper */
+            .content-wrapper {
+                margin: 20px;
+                padding: 20px;
+                border: 2px solid #333;
+                border-radius: 10px;
+                background-color: #f0f0f0;
+            }
+    
+            /* Add styling for the password sections */
+            .password-section {
+                font-family: 'Courier New', Courier, monospace; /* Use a monospace font for better alignment */
+            }
+        </style>
+    </head>
+    <div class="content-wrapper">
+        <!-- Your converted Markdown content goes here -->
+    
+        <p>This is an exampele of implication for the Password Management Systems.</p>
+    
+        <div id="passwordDisplay">
+            <!-- The password sections will be displayed here -->
+        </div>
+    
+        <label for="userInput">Enter the missing part:</label>
+        <input type="text" id="userInput">
+    
+        <button id="checkButton">Log In</button>
+    </div>
+    
+    <script>
+        // Your interactive JavaScript code goes here
+        const password = "Pitt@HIP123";
+        const passwordSections = splitPassword(password);
+        const displayElement = document.getElementById("passwordDisplay");
+        const userInputElement = document.getElementById("userInput");
+        const checkButton = document.getElementById("checkButton");
+    
+        function splitPassword(password) {
+            // Split the password into sections
+            const sections = [];
+            let sectionStart = 0;
+    
+            for (let i = 1; i <= 3; i++) {
+                const sectionLength = Math.ceil(password.length / 3);
+                const section = password.substring(sectionStart, sectionStart + sectionLength);
+                sections.push(section);
+                sectionStart += sectionLength;
+            }
+    
+            return sections;
+        }
+    
+        function updatePasswordDisplay() {
+            // Display the password sections with a random section masked
+            displayElement.innerHTML = passwordSections.map((section, index) => {
+            if (index === maskedSectionIndex) {
+                // Use repeat() to create a string of '*' with the same length as the section
+                return "<span class='password-section'>" + "*".repeat(section.length) + "</span>";
+            } else {
+                return "<span class='password-section'>" + section + "</span>";
+            }
+            }).join("");
+        }
+
+    
+        function getRandomSectionIndex() {
+            // Get a random section index to mask
+            return Math.floor(Math.random() * 3);
+        }
+    
+        let maskedSectionIndex = getRandomSectionIndex();
+        updatePasswordDisplay();
+    
+        checkButton.addEventListener("click", function () {
+            // Check if the user input matches the masked section
+            const userInput = userInputElement.value;
+            if (userInput === passwordSections[maskedSectionIndex]) {
+                alert("Correct!");
+                // Generate a new random masked section
+                maskedSectionIndex = getRandomSectionIndex();
+                updatePasswordDisplay();
+                userInputElement.value = ""; // Clear the input field
+            } else {
+                alert("Incorrect. Try again.");
+            }
+        });
+    </script>
+    <br>
+    <br>
+    <h2 id='way-to-evaluate--expected-results'><span>Way to evaluate &amp;&amp; Expected Results</span></h2><ul><li><p><span>Way to evaluate </span></p></li></ul><p><span>In order to rigorously evaluate the effectiveness of the proposed password memory reinforcement method, a controlled experiment will be conducted, involving the establishment of two distinct subject groups. Given that individuals typically create their own passwords, subjects participating in this experiment will be tasked with devising their own unique passwords. However, to simulate the situation in which individuals are uncertain about certain aspects of their passwords, a random four-digit combination of numbers or characters will be appended to each subject&#39;s self-created password. For instance, should a subject create a password such as </span><code>Pitt@HIP123</code><span>, the system will add </span><code>7890</code><span> to emulate individuals&#39; ambiguity regarding password elements.</span></p><p><span>The experiment will entail the division of subjects into two groups. The first group will employ the aforementioned memory reinforcement technique, which involves randomly prompting users to actively input a portion of their passwords during the login process. The second group will serve as the control, using conventional password management systems, where passwords are stored securely but without the additional reinforcement feature. Both groups will have the ability to independently access and verify their passwords within the password management system, prior to the experiment, both groups will dedicate 10 minutes to memorizing their respective passwords. During the experiment, it is imperative to note that the subjects will be solely responsible for initiating these verifications, as the experimenter will refrain from deliberately guiding them towards this action.</span></p><p><span>Following a series of fifty interactions with the respective password management systems and 1 hour break that all subjects can do whatever they want, subjects from both groups will be subjected to a recall assessment. </span><strong><span>The experimenter will assess and record the accuracy with which each subject can successfully recall their complete passwords.</span></strong><span> The experimenter also recorded the time it took the subject to recall the password. If a subject is unable to recall the password within 10 minutes, the subject will be denoted as &quot;unable to recall&quot;. In the end, measured time will be inverted into the time remaining until the allotted 10 minutes have elapsed. </span><strong><span>The time we measures will be converted to the time remaining relative to 10 minutes.</span></strong><span> This rigorous experimental design aims to provide valuable insights into the efficacy of the proposed memory reinforcement technique in enhancing password recall.</span></p><ul><li><p><span>Expected results</span></p></li></ul><p><span>Our research hypothesis posits distinctive outcomes between the two groups under investigation. Specifically, we anticipate that the first group, utilizing the memory reinforcement technique in password management, will exhibit higher levels of accuracy in password recall. Furthermore, we expect that the remaing time for password retrieval in this group will be notably longer. Conversely, our expectation for the second group, utilizing conventional password management systems without the memory reinforcement element, is a relatively lower level of accuracy and very little time remaining for the retrieval of their passwords.</span></p><p><span>At its core, our hypothesis rests on the belief that the implementation of the proposed memory reinforcement technique will engender favorable results. We anticipate that this approach, which repetitively engages users in the active recall of password components, will effectively bolster their ability to remember complex passwords. This experiment seeks to provide empirical support for the hypothesis, shedding light on the practicality and potential benefits of integrating memory-enhancing features into password management systems.</span></p><p><span>Furthermore, this research is positioned to serve as a pioneering endeavor that not only delves into the effectiveness of the memory-enhancing feature but also delves into its broader implications for the realm of password management systems. We envisage that the data and insights gained from this experiment will not only validate the practicality of integrating such memory-enhancing features but will also underscore the potential benefits of incorporating these mechanisms into standard password management systems. These benefits extend beyond individual users and touch upon aspects of information security, usability, and overall user experience, which are paramount in the digital age. This comprehensive approach to evaluating our hypothesis underscores the potential for transformative advancements in the field of password security and management.</span></p><p>&nbsp;</p>
+    <h2 id='references'><span>References</span></h2><p><span>[1]Sparrow, B., Liu, J., and Wegner, D. M. (2011). Google effects on memory: Cognitive consequences of having information at our fingertips. Science, 333, 776-778.</span></p><p><span>[2]Johnson, J. (2014). Our Attention is Limited; Our Memory is Imperfect. Designing with the mind in mind: simple guide to understanding user interface design guidelines. 2nd ed. Burlington, MA: Morgan Kaufmann. Chapter 7</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+</body>
+</html>
